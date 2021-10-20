@@ -1,0 +1,4 @@
+version:
+settings:
+  leaderboard-count: 10
+  leaderboard-refresh-in-mins: 5

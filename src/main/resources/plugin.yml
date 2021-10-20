@@ -1,0 +1,8 @@
+name: MobCoinsPL
+version: '${project.version}'
+main: me.alen_alex.mobcoinspl.mobcoinspl.MobCoinsPL
+depend: [ QuadrexMobCoins]
+softdepend:
+  - "PlaceholderAPI"
+authors: [ Alen_Alex ]
+description: An addon for QuadrexMobCoins PlaceholderAPI support as top members
