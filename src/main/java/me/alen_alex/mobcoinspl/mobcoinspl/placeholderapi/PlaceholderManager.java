@@ -3,6 +3,8 @@ package me.alen_alex.mobcoinspl.mobcoinspl.placeholderapi;
 import me.alen_alex.mobcoinspl.mobcoinspl.MobCoinsPL;
 import org.bukkit.ChatColor;
 
+import java.text.NumberFormat;
+
 public class PlaceholderManager {
 
     private MobCoinsPL plugin;
@@ -27,6 +29,14 @@ public class PlaceholderManager {
             return LEADERBOARD_REFRESHING;
         if(plugin.getLeaderboardCache().containsKey(position)){
             return String.valueOf(plugin.getLeaderboardCache().get(position).getPlayerBalance());
+        }else return UNKNOWN_POSITION;
+    }
+
+    public String getLeaderboardCoinsFormatted(int position){
+        if(plugin.getLeaderboardCache().isEmpty())
+            return LEADERBOARD_REFRESHING;
+        if(plugin.getLeaderboardCache().containsKey(position)){
+            return String.valueOf(NumberFormat.getInstance().format(plugin.getLeaderboardCache().get(position).getPlayerBalance()));
         }else return UNKNOWN_POSITION;
     }
 }

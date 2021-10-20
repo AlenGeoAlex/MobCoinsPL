@@ -62,6 +62,15 @@ public class PlaceholderAPI extends PlaceholderExpansion {
                 else return "Error";
             }else return "Error";
         }
+
+        if(identifier.startsWith("ftopcoins")){
+            String[] args = identifier.split("_");
+            if(args.length == 2){
+                if(StringUtils.isNumeric(args[1]))
+                    return manager.getLeaderboardCoinsFormatted(Integer.parseInt(args[1]));
+                else return "Error";
+            }else return "Error";
+        }
         return null;
     }
 }
